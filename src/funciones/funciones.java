@@ -1102,7 +1102,7 @@ public class funciones {
 
 			for (int j = 0; j < sopa[i].length; j++) {
 
-				if (sopa[i][j] == " " || sopa[i][j] == null || sopa[i][j].equals(""))  {
+				if (sopa[i][j] == " ") {
 
 					sopa[i][j] = randomchar();
 
@@ -1134,7 +1134,7 @@ public class funciones {
 		// sopa es la sopa de letras que debemos rellenar, es de referencia, y es de
 		// entrada y salida.
 
-		if (sopa[i][j] == " " || sopa[i][j] == null || sopa[i][j].equals("")) {
+		if (sopa[i][j] == " ") {
 
 			sopa[i][j] = randomchar();
 
@@ -1551,9 +1551,10 @@ public class funciones {
 
 				n = readRange(3, 20, Rangos.AMBOSIN);
 
-				System.out.println("¿Cuántas palabras quieres que tenga?");
+				System.out.println("¿Cuántas palabras quieres que tenga?\n"
+						+ "(Mínimo: 1)");
 
-				numpalabras = readInt();
+				numpalabras = readEqui(1, Equivalencias.MAYORIGUAL);
 
 				sopa = crearSopaLetras(n, palabras = peticionPalabra(numpalabras));
 
