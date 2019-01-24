@@ -577,7 +577,7 @@ public class funciones {
 
 		int espacios = 0;
 
-		if (palabra.matches("[A-ZN][a-zn]+(([A-ZN][a-zn]+)?)*") && palabra.length() <= sopa.length) {
+		if (palabra.matches("[A-ZÑ][a-zñ]+([A-ZÑ]{1,2}[a-zñ]+)*") && palabra.length() <= sopa.length) {
 
 			if (or == Orientaciones.DCHA) {
 
