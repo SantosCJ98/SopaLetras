@@ -1003,17 +1003,7 @@ public class funciones {
 
 		}
 
-		if (valido) {
-
-			return true;
-
-		}
-
-		else {
-
-			return false;
-
-		}
+		return valido;
 
 	}
 
@@ -1472,30 +1462,6 @@ public class funciones {
 	// Función que verifica si se ha creado una sopa de letras. (Se considera que
 	// esta creada si no tiene espacios en blanco)
 
-	public static boolean sopaexiste(String[][] sopa) {
-
-		// sopa es la sopa de letras. Es de referencia y es de entrada.
-
-		boolean existe = true;
-
-		for (int i = 0; i < sopa.length && existe; i++) {
-
-			for (int j = 0; j < sopa[i].length && existe; j++) {
-
-				if (sopa[i][j] == null || sopa[i][j].equals("") || sopa[i][j].equals(" ")) {
-
-					existe = false;
-
-				}
-
-			}
-
-		}
-
-		return existe;
-
-	}
-
 	// Función del menú del juego.
 
 	/*
@@ -1525,17 +1491,17 @@ public class funciones {
 
 		System.out.println("¡Bienvenido al juego de la Sopa de Letras!");
 
-		String[][] sopa = new String[1][1];
+		String[][] sopa = null;
 
-		String[] palabras = new String[1];
+		String[] palabras = null;
 
 		while (opcion != 4) {
 
 			if (opcion == 3) {
 
-				sopa = new String[1][1];
+				sopa = null;
 
-				palabras = new String[1];
+				palabras = null;
 
 			}
 
@@ -1551,8 +1517,7 @@ public class funciones {
 
 				n = readRange(3, 20, Rangos.AMBOSIN);
 
-				System.out.println("¿Cuántas palabras quieres que tenga?\n"
-						+ "(Mínimo: 1)");
+				System.out.println("¿Cuántas palabras quieres que tenga?\n" + "(Mínimo: 1)");
 
 				numpalabras = readEqui(1, Equivalencias.MAYORIGUAL);
 
@@ -1562,7 +1527,7 @@ public class funciones {
 
 			case 2:
 
-				if (sopaexiste(sopa)) {
+				if (sopa != null) {
 
 					mostrarSopaLetras(sopa);
 
@@ -1578,7 +1543,7 @@ public class funciones {
 
 			case 3:
 
-				if (sopaexiste(sopa)) {
+				if (sopa != null) {
 
 					jugar(sopa, palabras);
 
