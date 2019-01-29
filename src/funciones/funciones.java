@@ -1043,7 +1043,7 @@ public class funciones {
 
 			}
 
-			if (!repetido && !aux.startsWith(" ") && !aux.endsWith(" ")) {
+			if (!repetido && aux.contains(" ")) {
 
 				palabras[i] = aux;
 
